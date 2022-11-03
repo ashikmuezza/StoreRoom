@@ -31,3 +31,8 @@
     text-align: center;
     display: flex;
 }
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #fa816b;
+    opacity: 1; /* Firefox */
+  }
