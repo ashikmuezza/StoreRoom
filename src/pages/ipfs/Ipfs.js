@@ -1,6 +1,6 @@
 import { Box, Tab, Tabs, Typography } from '@mui/material';
 import { useState } from 'react';
-import { Create } from '../../components';
+import { Create, Dashboard } from '../../components';
 import './Ipfs.css'
 
 const Ipfs = () => {
@@ -35,7 +35,7 @@ const Ipfs = () => {
           )}
           {tabIndex === 1 && (
             <Box>
-              <></>
+              <Dashboard/>
             </Box>
           )}
 
