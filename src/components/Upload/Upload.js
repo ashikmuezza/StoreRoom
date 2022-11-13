@@ -41,7 +41,7 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
   },
   // hide last border
   "&:last-child td, &:last-child th": {
-    //border: 0,
+    // border: 0,
   },
 }));
 
@@ -62,7 +62,8 @@ const Upload = () => {
   const { files, setFiles, handleDragDropEvent, removeFile } = useFileUpload();
 
   const [loading, setLoading] = useState(false);
-  const [uploading, setUploading] = useState(false);
+  const [isUpload, setFileUpload] = useState(false);
+  const [uploadStatus, setUploadStatus] = useState(false);
   const [cid, setCid] = useState("");
   const inputRef = useRef();
   console.log("data", files);
@@ -70,12 +71,10 @@ const Upload = () => {
   const createNewPaste = async () => {
     console.log("Button clicked");
     setLoading(true);
-
     console.log("loading", loading);
 
     let formattedContent, serializedFiles;
 
-    serializedFiles = [];
     const filePromises = files.map((file) => {
       return new Promise((resolve, reject) => {
         const reader = new FileReader();
@@ -110,6 +109,7 @@ const Upload = () => {
     // }
 
     formattedContent = {
+      isFile: isUpload,
       files: serializedFiles,
     };
 
@@ -120,29 +120,24 @@ const Upload = () => {
     const file = new File([finalizedFileContent], { type: "text/plain" });
     const cid = await storageClient.put([file]);
 
-    console.log("cid",cid)
-    console.log("serializedFileContent",serializedFileContent)
+    console.log("cid", cid);
+    console.log("serializedFileContent", serializedFileContent);
     setCid(cid);
 
     const finaldata = [];
 
     for (let i = 0; i < files.length; i++) {
-      save(files[0].name,files[0].type,files[0].size/1000,files[0].lastModifiedDate.toDateString(),cid)
-     }
+      save(
+        files[0].name,
+        files[0].type,
+        files[0].size / 1000,
+        files[0].lastModifiedDate.toDateString(),
+        cid
+      );
+    }
 
     setLoading(false);
-    // setLoading(false);
-    console.log("Upload", uploading);
-
-    setUploading(true);
-    //window.location.reload(false);
-
-    // setTimeout(() => {
-    //   console.log("Hello, World!");
-    //   setUploading(false);
-
-    //   window.location.reload(false);
-    // }, 3000);
+    setUploadStatus(true);
   };
 
   return (
@@ -175,6 +170,7 @@ const Upload = () => {
               style={{ display: "none" }}
               onChange={(e) => {
                 setFiles(e, "a");
+                setFileUpload(true);
                 inputRef.current.value = null;
               }}
             />
@@ -247,7 +243,7 @@ const Upload = () => {
         </Button>
       </div>
 
-      {uploading ? (
+      {uploadStatus ? (
         <div className="message">
           <Card sx={{ background: "#042c54" }}>
             <CardContent>
