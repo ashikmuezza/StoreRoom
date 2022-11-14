@@ -38,7 +38,6 @@
 
 
 .upload-img{
-
     justify-content: center;
     align-content: center;
     text-align: center;
@@ -65,7 +64,8 @@
     outline: none;
     cursor: pointer;
     border-radius: 5px;
-    margin: 2.5rem;
+    margin-bottom: 2.5rem;
+    margin-top: -2.5rem;
     justify-content: center;
     align-content: center;
     text-align: center;
@@ -90,3 +90,24 @@
     align-content: center;
     justify-content: center;
 }
+
+  @media screen and (max-width: 992px) {
+    .upload {
+        display: flex;
+        flex-direction: column;
+        width: 70%;
+        margin-left: 2rem;
+        position: absolute;
+    }
+  }  
+
+  @media screen and (max-width: 700px) {
+    .upload {
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        margin-left: 2rem;
+        position: absolute;
+    }
+}
+  

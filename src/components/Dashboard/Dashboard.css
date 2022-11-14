@@ -1,3 +1,8 @@
+.table{
+  padding-bottom: 5rem;
+}
+
+
 .download-button {
   display: flex;
   justify-content: right;

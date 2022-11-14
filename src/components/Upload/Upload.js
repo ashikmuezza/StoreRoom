@@ -15,6 +15,8 @@ import {
   TableRow,
   CircularProgress,
 } from "@mui/material";
+import { makeStyles,
+} from "@material-ui/core";
 import { Web3Storage } from "web3.storage";
 import { Button } from "react-bootstrap";
 import { SaveData } from "../../api/api";
@@ -58,7 +60,30 @@ const save = async (FileName, FileType, FileSize, FileDate, IpfsHash) => {
   console.log(res);
 };
 
+
+const useStyles = makeStyles((theme) => ({
+  upload: {
+    width: "75%",
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center",
+    marginTop: 25,
+    padding: 40,
+    [theme.breakpoints.down("md")]: {
+      width: "100%",
+      marginTop: 0,
+      padding: 20,
+      paddingTop: 0,
+    },
+
+  },
+}));
+
 const Upload = () => {
+
+  const classes = useStyles()
+
   const { files, setFiles, handleDragDropEvent, removeFile } = useFileUpload();
 
   const [loading, setLoading] = useState(false);
@@ -109,7 +134,7 @@ const Upload = () => {
     // }
 
     formattedContent = {
-      isFile: isUpload,
+      isFile: true,
       files: serializedFiles,
     };
 
@@ -152,7 +177,7 @@ const Upload = () => {
       >
         <Card sx={{ background: "#042c54" }}>
           <CardContent>
-            <p>Drag and drop files here or </p>
+            <p>Drag and drop file or Click here</p>
 
             <div className="upload-img">
               <img
@@ -235,10 +260,10 @@ const Upload = () => {
                 size={20}
                 thickness={5}
               />
-              &nbsp; &nbsp; Creating paste
+              &nbsp; &nbsp; Uploading
             </span>
           ) : (
-            "Create paste"
+            "Upload File"
           )}
         </Button>
       </div>
@@ -264,6 +289,7 @@ const Upload = () => {
       ) : (
         ""
       )}
+     
     </div>
   );
 };
