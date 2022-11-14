@@ -32,6 +32,7 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
     color: "#fa816b",
     fontFamily: "Manrope",
     borderColor: "#fa816b",
+    margin:"0"
   },
   [`&.${tableCellClasses.body}`]: {
     fontSize: 14,
@@ -53,12 +54,17 @@ const Dashboard = () => {
   const [records, setRecords] = useState([]);
   const [loading, setLoading] = useState(false);
   const [buttonloading, setbuttonLoading] = useState(false);
-
   const [content, setContent] = React.useState("");
+  const [myhash, setHash] = React.useState("");
 
   const viewPaste = async (hash) => {
 
+    setbuttonLoading(true)
+
     console.log("hash", hash);
+
+    setHash(hash)
+    
     const res = await storageClient.get(hash);
     const files = await res.files();
     console.log(files);
@@ -73,40 +79,53 @@ const Dashboard = () => {
       } catch (e) {
         console.error(e);
         setLoading(false);
-        return;
+        return
       }
 
       console.log("rawContent", rawContent);
 
       const serializedFiles = rawContent.files;
 
-      console.log(serializedFiles);
-      const files = [];
+      console.log(serializedFiles)
+      const files = []
       if (rawContent.isFile) {
         for (const serializedFile of serializedFiles) {
           const fileBuffer = new Uint8Array(serializedFile.content).buffer;
           const file = new File([fileBuffer], serializedFile.name, {
             type: serializedFile.type,
           });
-          files.push(file);
+          files.push(file)
         }
-        console.log("files",files[0]);
+        console.log("files",files[0])
 
-        const element = window.document.createElement("a");
+        const element = window.document.createElement("a")
         element.href = window.URL.createObjectURL(
           new Blob([files[0]], { type: files[0]["type"] })
         );
-        element.download = files[0]["name"];
+        element.download = files[0]["name"]
+        document.body.appendChild(element)
+        element.click()
+        document.body.removeChild(element)
+
+      } else {
+        setContent(serializedFiles[0].content);
+
+        const element = window.document.createElement("a");
+        element.href = window.URL.createObjectURL(
+          new Blob([content], { type: "text/plain" })
+        );
+        element.download = "myFile.txt"
         document.body.appendChild(element);
         element.click();
         document.body.removeChild(element);
 
-      } else {
-        setContent(serializedFiles[0].content);
       }
 
     });
     reader.readAsBinaryString(file);
+
+    setbuttonLoading(false)
+  
   };
 
   const getList = async () => {
@@ -122,8 +141,7 @@ const Dashboard = () => {
   }, []);
 
   return (
-    <div>
-      {" "}
+    <div className="table">
       <TableContainer component={Paper}>
         <Table sx={{ minWidth: 700 }} aria-label="customized table">
           <TableHead>
@@ -161,14 +179,14 @@ const Dashboard = () => {
 
                       // onClick={console.log(row.IpfsHash)}
                     >
-                      {buttonloading ? (
+                      {buttonloading && row.IpfsHash === myhash ? (
                         <span>
                           <CircularProgress
                             style={{ color: "yellowgreen" }}
                             size={20}
                             thickness={5}
                           />
-                          &nbsp; &nbsp; Exporting
+                          &nbsp; &nbsp; Downloading
                         </span>
                       ) : (
                         "Download"

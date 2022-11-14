@@ -24,7 +24,7 @@ const Ipfs = () => {
             '& .Mui-selected': { color: "#fa816b", },
           }}
         >
-          <Tab label="Create " />
+          <Tab label="New " />
           <Tab label="Dashboard" />
         </Tabs>
         <Box sx={{ margin: 2,}}>
