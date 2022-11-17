@@ -1,1 +1,1 @@
-# React-boilerplate
+# StoreRoom
