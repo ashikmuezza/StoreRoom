@@ -8,3 +8,21 @@
     color: var(--color-text);
     margin-top: 1.5rem;
 }
+
+
+@media screen and (max-width: 490px) {
+    .Login {
+      display: flex;
+      flex-direction: column;
+      width: fit-content;
+    }
+  
+    .Login p { 
+       
+        display: flex;
+    	flex-wrap: wrap;
+        width: 50%;
+        margin-right: 40px;
+      }
+
+  }

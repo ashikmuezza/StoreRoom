@@ -1,9 +1,12 @@
-import { getDefaultWallets, RainbowKitProvider, ConnectButton } from "@rainbow-me/rainbowkit";
-import { chain, configureChains, createClient, WagmiConfig , } from "wagmi";
+import {
+  getDefaultWallets,
+  RainbowKitProvider,
+  ConnectButton,
+} from "@rainbow-me/rainbowkit";
+import { chain, configureChains, createClient, WagmiConfig } from "wagmi";
 import { publicProvider } from "wagmi/providers/public";
 //import "../styles/globals.css";
 import "@rainbow-me/rainbowkit/styles.css";
-
 
 const { chains, provider } = configureChains(
   [chain.mainnet, chain.polygonMumbai, chain.goerli],
@@ -21,17 +24,16 @@ const wagmiClient = createClient({
   connectors,
 });
 
-const RainbowKit = () => {  
-
+const RainbowKit = () => {
   return (
-        <div className='rainbow'  >
-          <WagmiConfig client={wagmiClient}>
-            <RainbowKitProvider  chains= {chains}>
-              <ConnectButton/>
-            </RainbowKitProvider>
-          </WagmiConfig>
-        </div>
-  )
-}
+    <div className="rainbow">
+      <WagmiConfig client={wagmiClient}>
+        <RainbowKitProvider chains={chains}>
+          <ConnectButton />
+        </RainbowKitProvider>
+      </WagmiConfig>
+    </div>
+  );
+};
 
-export default RainbowKit
+export default RainbowKit;

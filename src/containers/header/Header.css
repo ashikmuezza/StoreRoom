@@ -17,7 +17,7 @@
   line-height: 75px;
   letter-spacing: -0.04em;
   width: 80%;
-  margin-top: 7rem;
+  margin-top: 5rem;
 }
 
 .header-content p {
@@ -54,9 +54,7 @@
 } */
 
 .header-image {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
+
 }
 
 /* .header-image div {
@@ -72,11 +70,9 @@
   justify-content: center;
   display: flex;
   flex-wrap: wrap;
-  flex-direction: row;
   margin-top: 5rem;
-  align-items: center;
-  margin-right: 2rem;
-  margin-right: 1rem;
+  margin-right: 10rem;
+  align-items: flex-start;
   width: 100%;
 }
 
@@ -102,73 +98,7 @@
   border-radius: 5px 0px 0px 5px;
 }
 
-@media screen and (max-width: 1050px) {
-  .header {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-  }
-}
 
-@media screen and (max-width: 850px) {
-  .header {
-    display: flex;
-    flex-direction: column;
-    margin-right: 5rem;
-    height: 100%;
-  }
-  .header-content h1 {
-    font-size: 28px;
-    line-height: 35px;
-    margin-right: 5rem;
-    margin-top: 2rem;
-  }
-
-  .header-content p {
-    font-size: 18px;
-    line-height: 30px;
-    margin-right: 5rem;
-  }
-
-  .header-content button {
-    font-size: 13px;
-    line-height: 16px;
-    margin-top: 1rem;
-  }
-
-  .header-image img {
-    margin-top: 3rem;
-  }
-}
-
-@media screen and (max-width: 490px) {
-  .header {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-  }
-  .header-content h1 {
-    font-size: 25px;
-    line-height: 35px;
-    margin-right: 5rem;
-    margin-top: 2rem;
-  }
-
-  .header-content p {
-    font-size: 15px;
-    line-height: 15px;
-    margin-right: 5rem;
-  }
-
-  .header-content button {
-    font-size: 13px;
-    line-height: 15px;
-  }
-
-  .header-image img {
-    margin-top: 3rem;
-  }
-}
 
 .button-container {
   width: 5px;
@@ -289,5 +219,74 @@
   50%,
   100% {
     bottom: 100%;
+  }
+}
+
+
+@media screen and (max-width: 1050px) {
+  .header {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .header {
+    display: flex;
+    flex-direction: column;
+    margin-right: 5rem;
+    height: 100%;
+  }
+  .header-content h1 {
+    font-size: 28px;
+    line-height: 35px;
+    margin-right: 5rem;
+    margin-top: 2rem;
+  }
+
+  .header-content p {
+    font-size: 18px;
+    line-height: 30px;
+    margin-right: 5rem;
+  }
+
+  .header-content button {
+    font-size: 13px;
+    line-height: 16px;
+    margin-top: 1rem;
+  }
+
+  .header-image img {
+    margin-top: 3rem;
+  }
+}
+
+@media screen and (max-width: 490px) {
+  .header {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  .header-content h1 {
+    font-size: 25px;
+    line-height: 35px;
+    margin-right: 1rem;
+    margin-top: 2rem;
+  }
+
+  .header-content p {
+    font-size: 15px;
+    line-height: 15px;
+    margin-right: 2rem;
+  }
+
+  .header-content button {
+    font-size: 13px;
+    line-height: 15px;
+  }
+
+  .header-image img {
+    margin-top: 1rem;
   }
 }
