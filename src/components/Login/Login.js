@@ -9,7 +9,7 @@ export function Login() {
   return (
    
       data.isConnected && (
-      <div className="Login">
+      <div className="Login1">
         <p>connected address is </p>
         <p>{data.address} </p>
       </div>

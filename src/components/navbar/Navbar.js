@@ -14,7 +14,7 @@ const Navbar = () => {
         <div className='navbar-links'>
             <div className='navbar-links-logo'>
                 {/* <img  src={logo} alt = "logo"/> */}
-              <p>Dashboard </p>  
+              <p>Store Room </p>  
             </div>
             <div className='navbar-links-container'>
                     {/* <p> <a href="#home">   Menu1 </a></p>

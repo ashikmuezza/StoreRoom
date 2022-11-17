@@ -17,7 +17,7 @@
   line-height: 75px;
   letter-spacing: -0.04em;
   width: 80%;
-  margin-top: 7rem;
+  margin-top: 5rem;
 }
 
 .header-content p {
@@ -54,9 +54,7 @@
 } */
 
 .header-image {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
+
 }
 
 /* .header-image div {
@@ -72,11 +70,9 @@
   justify-content: center;
   display: flex;
   flex-wrap: wrap;
-  flex-direction: row;
   margin-top: 5rem;
-  align-items: center;
-  margin-right: 2rem;
-  margin-right: 1rem;
+  margin-right: 10rem;
+  align-items: flex-start;
   width: 100%;
 }
 

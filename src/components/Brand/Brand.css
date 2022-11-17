@@ -23,14 +23,18 @@
 }
 
 .brand p{
-    font-family: var(--font-family);
-    font-style: normal;
-    font-weight: normal;
-    font-size: 20px;
-    line-height: 27px;
+
     letter-spacing: -0.01em;
     color: var(--color-text);
+
     margin-top: 2rem;
+    color: var(--color-text);
+    font-family: var(--font-family);
+    font-weight: 1000;
+    font-size: 36px;
+    line-height: 25px;
+    text-transform: capitalize;
+    cursor: pointer;
 }
 
 .brand img:hover .p{
