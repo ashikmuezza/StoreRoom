@@ -23,20 +23,27 @@
 }
 
 .brand p{
-
     letter-spacing: -0.01em;
     color: var(--color-text);
-
     margin-top: 2rem;
     color: var(--color-text);
     font-family: var(--font-family);
-    font-weight: 1000;
+    font-weight:600;
     font-size: 36px;
-    line-height: 25px;
+    line-height: 65px;
     text-transform: capitalize;
     cursor: pointer;
 }
 
 .brand img:hover .p{
     font-size: 22px;
+}
+
+
+@media screen and (max-width: 550px) {
+    .brand img {
+        width: 50%;
+        height: 30%;
+        cursor: pointer;
+    }
 }

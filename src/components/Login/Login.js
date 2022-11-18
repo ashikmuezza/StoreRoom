@@ -7,13 +7,15 @@ export function Login() {
   console.log(data);
 
   return (
-   
+
       data.isConnected && (
-      <div className="Login1">
+      <div>
         <p>connected address is </p>
-        <p>{data.address} </p>
+        <p1>{data.address} </p1>
       </div>
+
       )
+
   );
 }
 

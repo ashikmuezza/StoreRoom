@@ -149,18 +149,31 @@
 
 @media screen and (max-width: 550px) {
     .navbar {
-        padding: 2rem;
+        padding: 2rem 4rem;
+       
     }
 
     .navbar-sign {
         display: none;
     }
 
-    .navbar-menu-container {
+    .navbar-menu-container div{
         top: 20px;
+        margin-left: 6rem;
     }
 
     .navbar-menu-container-links-sign {
         display: block;
+    }
+
+    .navbar-links-logo p {
+        color: var(--color-text);
+        font-family: var(--font-family);
+        font-weight: 1000;
+        font-size: 26px;
+        line-height: 25px;
+        text-transform: capitalize;
+        margin: 0 1rem;
+        cursor: pointer;
     }
 }

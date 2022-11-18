@@ -31,6 +31,17 @@
   margin-top: 1.5rem;
 }
 
+.header-content p1 {
+  font-family: var(--font-family);
+  font-style: normal;
+  font-weight: normal;
+  font-size: 15.5px;
+  line-height: 27px;
+  letter-spacing: -0.01em;
+  color: #fa816b;
+  margin-top: 2.5rem;
+}
+
 .header-content button {
   padding: 0.5rem 1rem;
   color: #fff;
@@ -229,6 +240,31 @@
     flex-direction: column;
     height: 100%;
   }
+
+  .header-content p1 {
+    font-family: var(--font-family);
+    font-style: normal;
+    font-weight: normal;
+    font-size: 10.5px;
+    line-height: 27px;
+    letter-spacing: -0.01em;
+    color: #fa816b;
+    margin-top: 2.5rem;
+  }
+
+  .header-image img {
+    margin-left: 5rem;
+    margin-top: -8rem;
+    align-content: center;
+    justify-content: center;
+  }
+
+  .header-image p {
+    margin-left: 7rem;
+    font-size: 22px;
+    line-height: 15px;
+    margin-right: 2rem;
+  }
 }
 
 @media screen and (max-width: 850px) {
@@ -258,7 +294,28 @@
   }
 
   .header-image img {
-    margin-top: 3rem;
+    margin-left: 5rem;
+    margin-top: -8rem;
+    align-content: center;
+    justify-content: center;
+  }
+
+  .header-image p {
+    margin-left: 7rem;
+    font-size: 16px;
+    line-height: 15px;
+    margin-right: 2rem;
+  }
+  
+  .header-content p1 {
+    font-family: var(--font-family);
+    font-style: normal;
+    font-weight: normal;
+    font-size: 10.5px;
+    line-height: 27px;
+    letter-spacing: -0.01em;
+    color: #fa816b;
+    margin-top: 2.5rem;
   }
 }
 
@@ -266,17 +323,15 @@
   .header {
     display: flex;
     flex-direction: column;
-    height: 100%;
   }
   .header-content h1 {
-    font-size: 25px;
+    font-size: 17px;
     line-height: 35px;
-    margin-right: 1rem;
-    margin-top: 2rem;
+   
   }
 
   .header-content p {
-    font-size: 15px;
+    font-size: 12px;
     line-height: 15px;
     margin-right: 2rem;
   }
@@ -284,9 +339,36 @@
   .header-content button {
     font-size: 13px;
     line-height: 15px;
+  
   }
 
   .header-image img {
-    margin-top: 1rem;
+    margin-left: 5rem;
+    margin-top: -8rem;
+    align-content: center;
+    justify-content: center;
   }
+
+  .header-image p {
+    margin-top: -1.5rem;
+    margin-left: 7rem;
+    font-size: 16px;
+    line-height: 15px;
+    margin-right: 2rem;
+  }
+
+  .header-content p1 {
+  font-family: var(--font-family);
+  font-style: normal;
+  font-weight: normal;
+  font-size: 10.5px;
+  line-height: 27px;
+  letter-spacing: -0.01em;
+  color: #fa816b;
+  margin-top: 2.5rem;
+  margin-top: -7rem;
+}
+
+
+
 }
