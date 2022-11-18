@@ -5,13 +5,13 @@
 <br />
 <div align="center">
    <a href="https://ibb.co/c2J0Fwy"><img src="https://cdn.freelogodesign.org/files/426506fa982f46869071ac8d5c45cc26/thumb/logo_200x200.png?v=638043623390000000" alt="Add-a-heading" border="0"></a>
-  <h3 align="center">Store Room</h3>
+ 
 </div>
 
 <!-- ABOUT THE PROJECT -->
-## About The Project
+## About The Store Room
 
-The main goal of our StoreRoom is to make simpler and more efficient than ever to store files on IPFS. Our user-friendly application connects with IPFS with your crypto wallet. For maximum performance, the storage solution includes a file compression, and image resizing when uploading.  You can view and download the files directly on the IPFS gateway through our dashboard.
+The idea behind StoreRoom is to make simpler and more efficient than ever to store files on IPFS. Our user-friendly application connects with IPFS with your crypto wallet. For maximum performance, the storage solution includes a file compression, and image resizing when uploading. You can view and download the files directly on the IPFS gateway through our dashboard.
 
 * Website link -  https://store-room.vercel.app/
 <!-- Tour -->
