@@ -26,8 +26,4 @@ const App = () => {
   );
 };
 
-App.listen(8080, () => {
-  console.log("listening on port 8080");
-});
-
 export default App;
